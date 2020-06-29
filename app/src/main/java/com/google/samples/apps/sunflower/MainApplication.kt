@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,18 +14,10 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.sunflower.data
+package com.google.samples.apps.sunflower
 
-/**
- * Repository module for handling data operations.
- */
-class PlantRepository(private val plantDao: PlantDao) {
+import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
 
-    fun getPlants() = plantDao.getPlants()
-
-    fun getPlant(plantId: String) = plantDao.getPlant(plantId)
-
-    fun getPlantsWithGrowZoneNumber(growZoneNumber: Int) =
-            plantDao.getPlantsWithGrowZoneNumber(growZoneNumber)
-
-}
+@HiltAndroidApp
+class MainApplication : Application()
